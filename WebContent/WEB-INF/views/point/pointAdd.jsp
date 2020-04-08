@@ -52,48 +52,46 @@
 	</div>
 	<h1>POINT ADD FORM</h1>
 
-	<form class="form-horizontal" action="./pointAdd" method="post">
+	<form action="./pointAdd" method="post">
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="email">Name:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="name"
+				<input type="text" class="form-control" id="name" name="name"
 					placeholder="Enter name">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="pwd">Number:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="num"
+				<input type="text" class="form-control" id="num" name="num"
 					placeholder="Enter num">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="pwd">Kor:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="kor"
+				<input type="text" class="form-control" id="kor" name="kor"
 					placeholder="Enter kor">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="pwd">Eng:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="eng"
+				<input type="text" class="form-control" id="eng" name="eng"
 					placeholder="Enter eng">
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="pwd">Math:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="math"
+				<input type="text" class="form-control" name="math" id="math"
 					placeholder="Enter math">
 			</div>
 		</div>
 		
-		<div class="form-group">
-			<div>
-				<button type="submit" class="btn btn-default">Submit</button>
-			</div>
-		</div>
+
+		<button type="submit" class="btn btn-default" >Submit</button>
+		
 	</form>
 </body>
 </html>
