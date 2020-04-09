@@ -69,6 +69,7 @@
 		
 		</table>
 		<a href="./pointAdd" class="btn btn-primary">PointAdd</a>
+	
 	</div>
 </div>
 </body>

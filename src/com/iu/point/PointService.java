@@ -14,6 +14,13 @@ public class PointService {
 		return pointDAO.pointList();
 	}
 	
+	public int pointMod(PointDTO pointDTO) throws Exception{
+		pointDTO.setTotal(pointDTO.getKor()+pointDTO.getEng()+pointDTO.getMath());
+		pointDTO.setAvg(pointDTO.getTotal()/3.0);
+		int result = pointDAO.pointMod(pointDTO);
+		return result;
+	}
+	
 	public PointDTO pointSelect(int num) throws Exception{
 		
 		return pointDAO.pointSelect(num);
