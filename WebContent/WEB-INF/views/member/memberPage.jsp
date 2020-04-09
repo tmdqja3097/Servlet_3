@@ -12,8 +12,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+</head>
 <body>
-	<!-- nav -->
+
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -32,10 +33,12 @@
 					href="${pageContext.request.contextPath }/point/pointList">Point</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="${pageContext.request.contextPath }/member/memberJoin"><span class="glyphicon glyphicon-user"></span>
-						Sign Up</a></li>
-				<li><a href="${pageContext.request.contextPath }/member/memberLogin"><span class="glyphicon glyphicon-log-in"></span>
-						Login</a></li>
+				<li><a
+					href="${pageContext.request.contextPath }/member/memberJoin"><span
+						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a
+					href="${pageContext.request.contextPath }/member/memberLogin"><span
+						class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -50,38 +53,29 @@
 		<p>This is some text.</p>
 		<p>This is another text.</p>
 	</div>
-	
-	
-	<div class = "container">
-	<div class = "row">
-		<table class="table table-hover">
-			
-			<h1>Point Select Page</h1>
-			<tr>
-				<td>번호</td>
-				<td>이름</td>
-				<td>국어</td>
-				<td>영어</td>
-				<td>수학</td>
-				<td>총점</td>
-				<td>평균</td>
-			</tr>
 
-			<tr>
-				<td>${dto.num}</td>
-				<td>${dto.name}</td>
-				<td>${dto.kor}</td>
-				<td>${dto.eng}</td>
-				<td>${dto.math}</td>
-				<td>${dto.total}</td>
-				<td>${dto.avg}</td>
-			</tr>
-			
-		</table>
-		
-		<a href="./pointMod?num=${dto.num}" class="btn btn-primary">Update</a>
-		<a href="./pointDelete?num=${dto.num}" class="btn btn-danger">Delete</a>
+
+	<div class="container">
+		<div class="row">
+			<table class="table table-hover">
+
+				<tr>
+					<td>Name</td>
+					<td>ID</td>
+					<td>Age</td>
+					<td>Phone</td>
+					<td>Email</td>
+				</tr>
+
+				<tr>
+					<td>${member2.name}</td>
+					<td>${member2.id}</td>
+					<td>${member2.age}</td>
+					<td>${member2.phone}</td>
+					<td>${member2.email}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
-</div>
 </body>
 </html>

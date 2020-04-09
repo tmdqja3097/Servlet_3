@@ -11,6 +11,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 	<!-- nav -->
@@ -50,50 +51,50 @@
 		<p>This is some text.</p>
 		<p>This is another text.</p>
 	</div>
-	
-	<h1>POINT MOD FORM</h1>
-	
-	<form action="./pointMod" method="post">
+	<h1>MEMBER JOIN FORM</h1>
+
+	<form action="./memberJoin" method="post">
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="email">Name:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="name" name="name" value="${dto.name}"
+				<input type="text" class="form-control" id="name" name="name"
 					>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="num">Num:</label>
+			<label class="control-label col-sm-2" for="pwd">ID:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="num" name="num" readonly="readonly" 
-					value="${dto.num}">
+				<input type="text" class="form-control" id="id" name="id"
+					>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="pwd">Kor:</label>
+			<label class="control-label col-sm-2" for="pwd">PW:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="kor" name="kor"
-					value="${dto.kor}">
+				<input type="password" class="form-control" id="pw" name="pw">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="pwd">Eng:</label>
+			<label class="control-label col-sm-2" for="pwd">AGE:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="eng" name="eng"
-					value="${dto.eng}">
+				<input type="text" class="form-control" id="age" name="age">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="pwd">Math:</label>
+			<label class="control-label col-sm-2" for="pwd">Phone:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" name="math" id="math"
-					value="${dto.math}">
+				<input type="text" class="form-control" name="phone" id="phone">
 			</div>
 		</div>
-		
-		<button type="submit" class="btn btn-default" >Submit</button>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="pwd">Phone:</label>
+			<div class="col-sm-10">
+				<input type="email" class="form-control" name="email" id="email">
+			</div>
+		</div>
 
-		
+		<button type="submit" class="btn btn-default">Submit</button>
+
 	</form>
-
 </body>
 </html>

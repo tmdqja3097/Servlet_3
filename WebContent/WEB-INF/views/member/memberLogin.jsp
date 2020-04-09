@@ -13,7 +13,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!-- nav -->
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -50,50 +49,21 @@
 		<p>This is some text.</p>
 		<p>This is another text.</p>
 	</div>
-	
-	<h1>POINT MOD FORM</h1>
-	
-	<form action="./pointMod" method="post">
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="email">Name:</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="name" name="name" value="${dto.name}"
-					>
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="num">Num:</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="num" name="num" readonly="readonly" 
-					value="${dto.num}">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="pwd">Kor:</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="kor" name="kor"
-					value="${dto.kor}">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="pwd">Eng:</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="eng" name="eng"
-					value="${dto.eng}">
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="pwd">Math:</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" name="math" id="math"
-					value="${dto.math}">
-			</div>
-		</div>
-		
-		<button type="submit" class="btn btn-default" >Submit</button>
 
-		
+	<form action="./memberLogin" method="post">
+		<div class="form-group">
+			<label for="email">ID:</label> <input type="text"
+				class="form-control" id="id" name="id">
+		</div>
+		<div class="form-group">
+			<label for="pwd">Password:</label> <input type="password"
+				class="form-control" id="pw" name="pw">
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox"> Remember me</label>
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
 	</form>
-
+	
 </body>
 </html>
