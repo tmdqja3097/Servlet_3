@@ -23,8 +23,6 @@
 - /point/pointMod	/				  / POST
 - /point/pointDelete/				  / GET
 
-<<<<<<< HEAD
-# 학원 추가
-=======
+
 # ADD HOME1
 
