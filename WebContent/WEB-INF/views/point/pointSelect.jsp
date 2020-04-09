@@ -28,7 +28,8 @@
 						<li><a href="#">Page 1-2</a></li>
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
-				<li><a href="${pageContext.request.contextPath }/point/pointList">Point</a></li>
+				<li><a
+					href="${pageContext.request.contextPath }/point/pointList">Point</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -49,7 +50,38 @@
 		<p>This is some text.</p>
 		<p>This is another text.</p>
 	</div>
-	<h1>Add Point Branch</h1>
+	
+	
+	<div class = "container">
+	<div class = "row">
+		<table class="table table-hover">
+			
+			<h1>Point Select Page</h1>
+			<tr>
+				<td>번호</td>
+				<td>이름</td>
+				<td>국어</td>
+				<td>영어</td>
+				<td>수학</td>
+				<td>총점</td>
+				<td>평균</td>
+			</tr>
 
+			<tr>
+				<td>${dto.num}</td>
+				<td>${dto.name}</td>
+				<td>${dto.kor}</td>
+				<td>${dto.eng}</td>
+				<td>${dto.math}</td>
+				<td>${dto.total}</td>
+				<td>${dto.avg}</td>
+			</tr>
+			
+		</table>
+		
+		<a href="./pointMod?num=${dto.num}" class="btn btn-primary">Update</a>
+		<a href="./pointDelete?num=${dto.num}" class="btn btn-danger">Delete</a>
+	</div>
+</div>
 </body>
 </html>

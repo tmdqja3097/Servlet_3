@@ -28,7 +28,8 @@
 						<li><a href="#">Page 1-2</a></li>
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
-				<li><a href="${pageContext.request.contextPath }/point/pointList">Point</a></li>
+				<li><a
+					href="${pageContext.request.contextPath }/point/pointList">Point</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -49,7 +50,50 @@
 		<p>This is some text.</p>
 		<p>This is another text.</p>
 	</div>
-	<h1>Add Point Branch</h1>
+	
+	<h1>POINT MOD FORM</h1>
+	
+	<form action="./pointMod" method="post">
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="email">Name:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="name" name="name" value="${dto.name}"
+					>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="num">Num:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="num" name="num" readonly="readonly" 
+					value="${dto.num}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="pwd">Kor:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="kor" name="kor"
+					value="${dto.kor}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="pwd">Eng:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="eng" name="eng"
+					value="${dto.eng}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="pwd">Math:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="math" id="math"
+					value="${dto.math}">
+			</div>
+		</div>
+		
+		<button type="submit" class="btn btn-default" >Submit</button>
+
+		
+	</form>
 
 </body>
 </html>
