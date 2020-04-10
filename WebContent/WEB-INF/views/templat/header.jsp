@@ -21,6 +21,10 @@
 				href="${pageContext.request.contextPath }/point/pointList">Point</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+			<li><a
+				href="${pageContext.request.contextPath }/notice/noticeList"><span
+					class="glyphicon glyphicon-log-in"></span> Notice</a></li>
+
 			<c:if test="${empty member}">
 				<li><a
 					href="${pageContext.request.contextPath }/member/memberJoin"><span
