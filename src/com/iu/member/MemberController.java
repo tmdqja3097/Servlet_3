@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
+import com.iu.point.PointDTO;
 import com.iu.point.PointService;
 
 /**
@@ -79,7 +81,6 @@ public class MemberController extends HttpServlet {
 						check = false;
 						path = "../";
 					} else {
-
 						request.setAttribute("result", "Login Fail");
 						request.setAttribute("path", "./memberLogin");
 						path = "../WEB-INF/views/common/result.jsp";
@@ -90,16 +91,48 @@ public class MemberController extends HttpServlet {
 				}
 			}else if(command.equals("/memberLogout")){
 				HttpSession session = request.getSession();
-				//session.removeAttribute("member");
 				session.invalidate();
 				check=false;
 				path= "../";
 			}else if(command.equals("/memberPage")) {
-				MemberDTO memberDTO = new MemberDTO();
+				path = "../WEB-INF/views/member/memberPage.jsp";
+			
+			}else if(command.equals("/memberDelete")) {
 				HttpSession session = request.getSession();
-				memberDTO = memberService.memberLogin(memberDTO);
-				session.setAttribute("member2", memberDTO);
+				MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+				int result = memberService.memberDelete(memberDTO);
+				
+				if(result>0) {
+					session.invalidate();
+				}
+				check = false;
+				path = "../";
+			
+			}else if(command.equals("/memberUpdate")) {
+				if (method.equals("POST")) {
+					HttpSession session = request.getSession();
+					MemberDTO memberDTO = new MemberDTO();
+					memberDTO.setName(request.getParameter("name"));
+					memberDTO.setId(request.getParameter("id"));
+					memberDTO.setAge(Integer.parseInt(request.getParameter("age")));
+					memberDTO.setPhone(request.getParameter("phone"));
+					memberDTO.setEmail(request.getParameter("email"));
+					
+					int result = memberService.memberUpdate(memberDTO);									
+					if(result>0) {
+						session.setAttribute("member", memberDTO);
+					}
+					check = false;
+					path = "../";
+					
+				} else {
+					HttpSession session = request.getSession();
+					MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+					request.setAttribute("dto", memberDTO);
+					path = "../WEB-INF/views/member/memberUpdate.jsp";
+				}
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

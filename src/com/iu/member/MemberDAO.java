@@ -4,9 +4,42 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.iu.point.PointDTO;
 import com.iu.util.DBConnect;
 
 public class MemberDAO {
+	
+	public int memberUpdate(MemberDTO memberDTO) throws Exception{
+		int result=0;
+		Connection con = DBConnect.getConnect();
+		String sql = "update member set name=?,id=?,age=?,phone=?,email=? where id=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setString(1, memberDTO.getName());
+		st.setString(2, memberDTO.getId());
+		st.setInt(3, memberDTO.getAge());
+		st.setString(4, memberDTO.getPhone());
+		st.setString(5, memberDTO.getEmail());
+		st.setString(6, memberDTO.getId());
+		result = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		return result;
+	}
+	
+	
+	public int memberDelete(MemberDTO memberDTO) throws Exception{
+		int result = 0;
+		Connection con = DBConnect.getConnect();
+		String sql = "delete member where id=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, memberDTO.getId());
+		result=st.executeUpdate();
+		st.close();
+		con.close();
+		return result;	
+	}
 	
 	
 	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception{
