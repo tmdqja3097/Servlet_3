@@ -93,11 +93,20 @@ public class NoticeDAO {
 		st.setString(2, noticeDTO.getName());
 		st.setString(3, noticeDTO.getContents());
 		st.setInt(4, noticeDTO.getNum());
+		result = st.executeUpdate();
 		
-		System.out.println(noticeDTO.getSubject());
-		System.out.println(noticeDTO.getName());
-		System.out.println(noticeDTO.getContents());
-		System.out.println(noticeDTO.getNum());
+		st.close();
+		con.close();
+		return result;
+	}
+	
+	public int noticeDelete(int num) throws Exception{
+		int result=0;
+		Connection con = DBConnect.getConnect();
+		String sql="delete notice where num=?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setInt(1, num);
 		result = st.executeUpdate();
 		
 		st.close();

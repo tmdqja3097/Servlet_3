@@ -94,10 +94,13 @@ public class NoticeController extends HttpServlet {
 			} else if (command.equals("/noticeMod")) {
 				if (method.equals("POST")) {
 					NoticeDTO noticeDTO = new NoticeDTO();
+				
 					
 					noticeDTO.setSubject(request.getParameter("subject"));
 					noticeDTO.setName(request.getParameter("name"));
 					noticeDTO.setContents(request.getParameter("contents"));
+					noticeDTO.setNum(Integer.parseInt(request.getParameter("num")));
+					System.out.println(Integer.parseInt(request.getParameter("num")));
 					
 					int result = noticeService.noticeMod(noticeDTO);
 					String msg="수정 실패";
@@ -116,6 +119,12 @@ public class NoticeController extends HttpServlet {
 					check = true;
 					path = "../WEB-INF/views/notice/noticeMod.jsp";
 				}
+			}else if(command.equals("/noticeDelete")){
+				int num = Integer.parseInt(request.getParameter("num"));			
+				int result = noticeService.noticeDelete(num);
+				check = false;
+				path = "./noticeList";
+				
 			}
 
 			if (check) {

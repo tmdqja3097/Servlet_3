@@ -17,8 +17,7 @@
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="pwd">Subject:</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="subject" name="subject"
-					placeholder="Enter Subject">
+				<input type="text" class="form-control" id="subject" name="subject" >
 			</div>
 		</div>
 
@@ -26,7 +25,7 @@
 			<label class="control-label col-sm-2" for="pwd">Contents:</label>
 			<div class="col-sm-10">
 				<textarea class="form-control" cols="220" rows="20" id="contents"
-					name="contents" placeholder="Enter Contents"></textarea>
+					name="contents" ></textarea>
 			</div>
 		</div>
 
@@ -37,6 +36,16 @@
 					id="name" name="name" value="${member.id}">
 			</div>
 		</div>
+		
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="pwd">Num:</label>
+			<div class="col-sm-10">
+				<input type="text" readonly="readonly" class="form-control" id="num" name="num" value="${dto.num}">
+			</div>
+		</div>
+		
+		
+		
 
 		<button type="submit" class="btn btn-default">Submit</button>
 	</form>

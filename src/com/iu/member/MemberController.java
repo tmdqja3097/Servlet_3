@@ -125,6 +125,7 @@ public class MemberController extends HttpServlet {
 					check = false;
 					path = "../";
 					
+					
 				} else {
 					HttpSession session = request.getSession();
 					MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");

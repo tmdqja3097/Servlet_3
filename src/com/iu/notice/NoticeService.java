@@ -29,4 +29,7 @@ public class NoticeService {
 		int result = noticeDAO.noticeMod(noticeDTO);
 		return result;
 	}
+	public int noticeDelete(int num) throws Exception{
+		return noticeDAO.noticeDelete(num);
+	}
 }
